@@ -8,7 +8,7 @@ use App\Customer;
 class CustomerController extends Controller
 {
     public function profile($customerId) {
-        $customer = Customer::where('id', $customerId)->first();
+        $customer = Customer::where('id', $customerId)->firstOrFail();
 
 	return view('customers.profile', ['customer' => $customer]);
     }

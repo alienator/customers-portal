@@ -6,25 +6,48 @@
 
 @section('content')
     <div class="col-10">
-	<div class="card shadow mb-4">
-	    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-		<h6 class="m-0 font-weight-bold text-primary"> {{ $customer->full_name  }} </h6>
+	<form>
+	    <div class="card shadow mb-4">
+		<div class="card-body">
+		    <div class="form-group">
+			<label for="full_name">Full name</label>
+			<input type="text" class="form-control" id="full_name" id="full_name" value="{{ $customer->full_name }}" />
+		    </div>
+		    <div class="form-group">
+			<label for="user_name">User name</label>
+			<input type="text" class="form-control" id="full_name" id="full_name" value="{{ $customer->user_name }}" />
+		    </div>
+		    <div class="form-group">
+			<label for="user_password">User password</label>
+			<button class="btn btn-outline-primary" type="button">change</button>
+		    </div>
+		    <div class="form-group">
+			<label for="address">Address</label>
+			<textarea class="form-control" id="address" name="address">{{ $customer->address }}</textarea>
+		    </div>
+		    <div class="form-group">
+			<label for="city">City</label>
+			<input type="text" class="form-control" id="city" name="city" value="{{ $customer->city }}" />
+		    </div>
+		    <div class="form-group">
+			<label for="country">Country</label>
+			<input type="text" class="form-control" id="country" name="country" value="{{ $customer->country }}" />
+		    </div>
+		    <div class="form-group">
+			<label for="phone">Phone number</label>
+			<input type="text" class="form-control" id="phone" name="phone" value="{{ $customer->phone }}" />
+		    </div>
+		    <div class="form-group">
+			<label for="email">Email</label>
+			<input type="text" class="form-control" id="email" name="email" value="{{ $customer->email }}" />
+		    </div>
+		    
+		</div>
+		<div class="card-footer">
+		    <button class="btn btn-secondary" type="button">cancel</button>
+		    <button class="btn btn-primary" type="button">save</button>
+		</div>
 	    </div>
-	    <div class="card-body">
-		<ul>
-		    <li>
-			User name: {{ $customer->user_name  }}
-		    </li>
-		    <li>
-			User password: *********
-		    </li>
-		</ul>
-	    </div>
-	    <div class="card-footer">
-		<button class="btn btn-primary" type="button">edit</button>
-	    </div>
-	</div>	
+	</form>
     </div>
 @endsection
-
-
