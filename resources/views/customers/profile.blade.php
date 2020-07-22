@@ -8,6 +8,9 @@
     <div class="col-10">
 	<form>
 	    <div class="card shadow mb-4">
+		<div class="card-header">
+		    <h2>Edit Profile Data</h2>
+		</div>
 		<div class="card-body">
 		    <div class="form-group">
 			<label for="full_name">Full name</label>
