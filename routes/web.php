@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/customers/{customerId}', 'CustomerController@profile');
+Route::post('/customers/', 'CustomerController@save');

@@ -12,4 +12,21 @@ class CustomerController extends Controller
 
 	return view('customers.profile', ['customer' => $customer]);
     }
+
+    public function save(Request $res) {
+	$attributes = $this->validateData();
+	dd($res->all());
+    }
+
+    public function validateData() {
+	return request()->validate([
+	    'full_name' => 'required',
+	    'user_name' => 'required',
+	    'address' => 'required',
+	    'city' => 'required',
+	    'country' => 'required',
+	    'phone' => 'required',
+	    'email' => 'email'
+	]);
+    }
 }

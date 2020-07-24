@@ -17,4 +17,10 @@ class CustomerControllerTest extends TestCase
 
 	$response->assertOk();
     }
+
+    public function test_save_customer() {
+	$this->withoutExceptionHandling();
+	$customer = factory(\App\Customer::class)->create();
+	$response = $this->post('/customers/', ['test' => '123']);
+    }
 }
