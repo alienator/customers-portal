@@ -17,5 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/customers/{customerId}', 'CustomerController@profile');
-Route::post('/customers/', 'CustomerController@save');
+Route::get('/customers/{customerId}', 'CustomerController@edit');
+Route::put('/customers/{customer}', 'CustomerController@update');

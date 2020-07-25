@@ -6,8 +6,9 @@
 
 @section('content')
     <div class="col-10">
-	<form action="/customers" method="POST">
+	<form action="/customers/{{ $customer->id }}" method="POST">
 	    @csrf
+	    @method('PUT')
 	    <div class="card shadow mb-4">
 		<div class="card-header">
 		    <h2>Edit Profile Data</h2>

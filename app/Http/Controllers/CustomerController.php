@@ -7,15 +7,18 @@ use App\Customer;
 
 class CustomerController extends Controller
 {
-    public function profile($customerId) {
+    public function edit($customerId) {
         $customer = Customer::where('id', $customerId)->firstOrFail();
 
 	return view('customers.profile', ['customer' => $customer]);
     }
 
-    public function save(Request $res) {
+    public function update(Customer $customer) {
 	$attributes = $this->validateData();
-	dd($res->all());
+	$customer->update($attributes);
+	$customer->save();
+
+	return redirect('/customers/' . $customer->id);
     }
 
     public function validateData() {
@@ -26,7 +29,8 @@ class CustomerController extends Controller
 	    'city' => 'required',
 	    'country' => 'required',
 	    'phone' => 'required',
-	    'email' => 'email'
+	    'email' => 'required',
+//	    'user_password' => 'required'
 	]);
     }
 }

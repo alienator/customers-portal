@@ -18,9 +18,25 @@ class CustomerControllerTest extends TestCase
 	$response->assertOk();
     }
 
-    public function test_save_customer() {
+    public function test_update_customer_with_password_change() {
 	$this->withoutExceptionHandling();
 	$customer = factory(\App\Customer::class)->create();
-	$response = $this->post('/customers/', ['test' => '123']);
+
+	$response = $this->put('/customers/' . $customer->id,
+			       $customer->toArray());
+
+	$response->assertRedirect('/customers/' . $customer->id);
+    }
+
+    public function test_update_customer_without_password_change() {
+	$this->withoutExceptionHandling();
+	$customer = factory(\App\Customer::class)->create();
+	$customerArray =$customer->toArray();
+	unset($customerArray['user_password']);
+	
+	$response = $this->put('/customers/' . $customer->id,
+			       $customerArray);
+
+	$response->assertRedirect('/customers/' . $customer->id);
     }
 }
