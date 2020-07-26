@@ -48,7 +48,7 @@
 		<hr class="sidebar-divider">
 
 		<li class="nav-item">
-		    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i>Orders</a>
+		    <a class="nav-link" href="/customers/{{ $customer->id }}/orders"><i class="fas fa-shopping-cart"></i>Orders</a>
 		</li>
 		
 		<!-- Divider -->
