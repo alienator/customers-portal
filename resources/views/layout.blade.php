@@ -39,7 +39,7 @@
 
 		<!-- Nav Item - Dashboard -->
 		<li class="nav-item active">
-		    <a class="nav-link" href="index.html">
+		    <a class="nav-link" href="/customers/{{ $customer->id }}">
 			<i class="fas fa-user"></i>
 			<span>User Profile</span></a>
 		</li>

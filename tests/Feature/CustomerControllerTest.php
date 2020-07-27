@@ -39,4 +39,16 @@ class CustomerControllerTest extends TestCase
 
 	$response->assertRedirect('/customers/' . $customer->id);
     }
+
+    public function test_orders_from_a_customer_can_be_readed() {
+	$this->withoutExceptionHandling();
+
+	$customer = factory(\App\Customer::class)->create();
+
+	$response = $this->get('/customers/'
+			     . $customer->id
+			     . '/orders');
+
+	$response->assertOk();
+    }
 }

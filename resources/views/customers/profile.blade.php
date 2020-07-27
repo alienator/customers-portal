@@ -63,7 +63,6 @@
 		    
 		</div>
 		<div class="card-footer">
-		    <button class="btn btn-secondary" type="button">cancel</button>
 		    <button class="btn btn-primary" type="submit">save</button>
 		</div>
 	    </div>

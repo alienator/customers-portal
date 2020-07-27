@@ -52,5 +52,6 @@ class OrderTest extends TestCase
 
 	$response->assertOk();
     }
+
 }
 

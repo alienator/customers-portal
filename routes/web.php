@@ -30,3 +30,5 @@ Route::post('/orders', 'OrderController@store');
 Route::put('/orders/{order}', 'OrderController@update');
 Route::get('/orders/{order}', 'OrderController@get');
 Route::get('/orders', 'OrderController@index');
+
+Route::get('/customers/{customer}/orders', 'CustomerController@orders');

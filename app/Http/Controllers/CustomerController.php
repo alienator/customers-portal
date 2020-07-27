@@ -33,4 +33,8 @@ class CustomerController extends Controller
 //	    'user_password' => 'required'
 	]);
     }
+
+    public function orders(Customer $customer) {
+	return view('customers.orders', compact('customer'));
+    }
 }
