@@ -13,6 +13,7 @@
 		    <th>Creation Date</th>
 		    <th>Total</th>
 		    <th>Status</th>
+		    <th></th>
 		</tr>
 	    </thead>
 	    <tbody>
@@ -22,6 +23,7 @@
 			<td>{{ $order->created_at }}</td>
 			<td>{{ $order->total }}</td>
 			<td>{{ $order->status }}</td>
+			<td><a href="/orders/{{ $order->id }}">ver</a> </td>
 		    </tr>
 		@endforeach
 	    </tbody>

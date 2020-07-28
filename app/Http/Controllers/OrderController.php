@@ -32,12 +32,19 @@ class OrderController extends Controller
     }
 
     public function get(Order $order) {
-	return view('orders.get', compact($order));
+	$customer = $order->customer;
+	return view('orders.get',
+		    [
+			'order' => $order,
+			'customer' => $customer
+		    ]
+		    );
     }
 
     public function index() {
 	$orders = Order::all();
 
-	return view('orders.index', compact($orders));
+	return view('orders.index', compact('orders'));
     }
+
 }

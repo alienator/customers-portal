@@ -18,7 +18,8 @@ class CreateOrdersTable extends Migration
 	    $table->foreignId('customer_id')
 		  ->references('id')
 		  ->on('customers')
-		  ->constrained();
+		  ->constrained()
+		  ->onDelete('cascade');
 	    $table->double('total');
 	    $table->string('status', 100);
             $table->timestamps();

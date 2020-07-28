@@ -7,7 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Customer::class, function (Faker $faker) {
     return [
-        'id' => $faker->randomNumber(),
 	'full_name' => $faker->name(),
 	'user_name' => $faker->name(),
 	'user_password' => $faker->text(12),
