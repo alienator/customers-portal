@@ -32,3 +32,6 @@ Route::get('/orders/{order}', 'OrderController@get');
 Route::get('/orders', 'OrderController@index');
 
 Route::get('/customers/{customer}/orders', 'CustomerController@orders');
+
+Route::post('/customers/', 'CustomerController@store');
+Route::post('/customers/login', 'CustomerController@login');
